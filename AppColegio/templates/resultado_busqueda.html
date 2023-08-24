@@ -1,0 +1,30 @@
+{% extends "padre.html" %}
+
+{% block seccion %}
+    <h1>Resultado búsqueda de alumno</h1>    
+{% endblock %}
+
+{% block contenido %}
+
+
+    <h2>Lista de alumnos:</h2>
+
+    {% if alumnos %}
+        <table class="table">
+            <tr>
+                <th></th>
+                 <th>Nombre</th>
+                 <th>Apellido</th>
+            </tr>
+            {% for alumno in alumnos %}
+            <tr>
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellido}}</td>
+            {% endfor %}
+            </tr>   
+        </table>
+    {% else %}
+        <p>No se encontraron alumnos</p>
+    {% endif %}
+
+{% endblock %}
